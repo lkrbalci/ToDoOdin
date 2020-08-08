@@ -1,0 +1,74 @@
+<html>
+
+    <head>
+        <title>ToDo Odin</title>
+        <meta charset="UTF-8" />
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="todo">
+                
+            </div>
+        <a class="addButton" onclick="addForm()" style="z-index:0">+</a>
+        </div>
+    </body>
+
+    <script src="index.js"></script>
+
+    
+
+
+</html>
+
+
+<style>
+
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.divToDo {
+    margin: 20px;
+    display: inline-block;
+    height: 300px;
+    width: 300px;
+    background-color: #f0ece3;
+    border: thick double #c7b198 ;
+    border-radius: 25px;
+    overflow:auto;
+}
+.divToDo h2 , p {
+    padding: 3px;
+    margin: 3px;
+    color: #596e79 ;
+}
+
+.addButton {
+    position: fixed;
+    top: 50%;
+    right: 30%;
+    font-family: Verdana,sans-serif;
+    line-height: 1.5;
+    box-sizing: inherit;
+    margin: 0px;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+    transition: opacity 0s;
+    border-radius: 50%;
+    font-size: 24px!important;
+    color: #fff!important;
+    background-color: #CC3363!important;
+    z-index: 0;
+}
+
+</style>
