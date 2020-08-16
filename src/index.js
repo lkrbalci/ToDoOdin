@@ -106,7 +106,7 @@ const listToDos = () => {
                 cell.id = iterator;
                 cell.addEventListener("click", function() {updateToDoForm(cell.getAttribute("id"))});
                 cell.style.cursor = "pointer";
-                cell.style.textDecoration = "underlined"
+                cell.style.textDecoration = "underline";
             } else if (prop != "done") {     
                 const cell = row.insertCell();
                 cell.innerHTML = element[prop];
