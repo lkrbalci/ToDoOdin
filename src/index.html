@@ -6,15 +6,59 @@
     </head>
 
     <body>
+        <div id="leftDiv">
+            <button id="styleSelector" onclick="changeToDoRender()">Show Cards</button>
+            <div id = "projectsContainer"></div>
+        </div>
         <div id="container">
             <div id="todo">
                 
             </div>
-        <a class="addButton" onclick="addForm()" style="z-index:0">+</a>
+        
+        </div>
+        <a class="addButton" onclick="addToDoForm()">+ Add ToDo</a>
+        <a class="addButton" onclick="addProjectForm()" style="top:21%!important">+ Add Project</a>
+        <div id = "addToDoForm">
+            <h2>what</h2>
+            <input type="text" id="addToDoFormWhat">
+            <h2>project</h2>
+            <select name="" id="projectSelect"></select>
+            <h2>when</h2>
+            <input type="text" id="addToDoFormWhen">
+            <h2>description</h2>
+            <textarea type="text" style="overflow: auto; height: 90px!important;" id="addToDoFormDescription"></textarea>
+            <h2>done?</h2>
+            <input type="checkbox" style="height: 16px!important; width: 16px!important;" id="addToDoFormDone">
+            <br>
+            <button onclick="saveToDo()" style="width: 100px!important;">SAVE</button>
+            <button onclick="cancelToDo()" style="width: 100px!important; margin-left: 0px;">CANCEL</button>
+        </div>
+        <div id = "addProjectForm" style="height: 20%;">
+            <h2>Project Name</h2>
+            <input type="text" id="addProjectFormName">
+            <div style="height: 30px;"><br></div>
+            <button onclick="saveProject()" style="width: 100px!important;">SAVE</button>
+            <button onclick="cancelProject()" style="width: 100px!important; margin-left: 0px;">CANCEL</button>
+        </div>
+        <div id = "toDoCardForm">
+            <h2>what</h2>
+            <input type="text" id="toDoCardFormWhat">
+            <h2>project</h2>
+            <select name="" id="toDoCardFormProject"></select>
+            <h2>when</h2>
+            <input type="text" id="toDoCardFormWhen">
+            <h2>description</h2>
+            <textarea type="text" style="overflow: auto; height: 90px!important;" id="toDoCardDescription"></textarea>
+            <h2>done?</h2>
+            <input type="checkbox" style="height: 16px!important; width: 16px!important;" id="toDoCardDone">
+            <br>
+            <button id="updateButton" style="width: 100px!important;">UPDATE</button>
+            <button onclick="cancelToDo()" style="width: 100px!important; margin-left: 0px;">CLOSE</button>
         </div>
     </body>
 
     <script src="index.js"></script>
+        
 
     
 
@@ -32,7 +76,7 @@
 .divToDo {
     margin: 20px;
     display: inline-block;
-    height: 300px;
+    height: 350px;
     width: 300px;
     background-color: #f0ece3;
     border: thick double #c7b198 ;
@@ -47,8 +91,8 @@
 
 .addButton {
     position: fixed;
-    top: 50%;
-    right: 30%;
+    top: 30%;
+    right: 0px;
     font-family: Verdana,sans-serif;
     line-height: 1.5;
     box-sizing: inherit;
@@ -64,11 +108,98 @@
     white-space: nowrap;
     user-select: none;
     transition: opacity 0s;
-    border-radius: 50%;
+    border-radius: 50% 0 0 50% ;
     font-size: 24px!important;
     color: #fff!important;
     background-color: #CC3363!important;
     z-index: 0;
+    
 }
+
+#addToDoForm, #addProjectForm, #toDoCardForm {
+    border-radius: 2%;
+    overflow: auto;
+    position: fixed;
+    display: none;
+    top: 10%;
+    left: 33%;
+    height: 60%;
+    width: 20%;
+    background-color: rgba(204, 51, 99, 0.9);
+}
+
+#addToDoForm h2,input,button,textarea {
+    padding: 3px;
+    margin: 3px 20px;
+    color: #596e79 ;
+    height: 30px;
+    width: 184px;
+}
+
+#toDoCardForm h2,input,button,textarea {
+    padding: 3px;
+    margin: 3px 20px;
+    color: #596e79 ;
+    height: 30px;
+    width: 184px;
+}
+
+#addProjectForm h2,input,button, select {
+    padding: 3px;
+    margin: 3px 20px;
+    color: #596e79 ;
+    height: 30px;
+    width: 184px;    
+}
+
+textarea {
+    overflow: hidden;
+}
+
+#toDoTable {
+    margin-top: 4%;
+    margin-left: 2%;
+    width: 80%;
+}
+
+#toDoTable #header * {
+    font-weight: bold;
+    background-color:#596e79;
+    color: #c7b198;
+}
+
+#toDoTable td {
+    background-color: #c7b198;
+    color: #596e79;
+}
+
+#leftDiv {
+    position: absolute;
+    top: 10%;
+    left: 0px;
+}
+
+#leftDiv table {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 80%;
+}
+
+#leftDiv #header * {
+    font-weight: bold;
+    background-color:#596e79;
+    color: #c7b198;
+}
+
+#leftDiv td {
+    background-color: #c7b198;
+    color: #596e79;
+}
+
+#leftDiv thead {
+    font-weight: bold;
+}
+
+
 
 </style>
